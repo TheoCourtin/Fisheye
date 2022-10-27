@@ -1,3 +1,6 @@
+
+
+
 async function getPhotographers() {
   // Penser à remplacer par les données récupérées dans le json
 
@@ -19,8 +22,10 @@ async function displayData(photographers) {
 async function init() {
   // Récupère les datas des photographes
   const { photographers } = await getPhotographers();
-  console.log(photographers);
+  //console.log(photographers);
   displayData(photographers);
 }
 
 init();
+
+

@@ -1,9 +1,11 @@
 function photographerFactory(data) {
   const { name, id, portrait, city, country, tagline, price } = data;
 
-  const picture = `assets/photographers/photographers_id_photos/${portrait}`;
-  //const picture = `assets/photographers/${portrait}`;
+  // const picture = `assets/photographers/photographers_id_photos/${portrait}`;
+  const picture = `assets/photographers/${portrait}`;
   
+  
+  //Affichage des photographes
   function getUserCardDOM() {
     const article = document.createElement("article");
 
@@ -58,10 +60,67 @@ function photographerFactory(data) {
     article.appendChild(pTagline);
     article.appendChild(divPrice);
 
-    console.log(url);
+    //console.log(url);
 
     return article;
+  } 
+  
+  function getPhotographerProfilDOM() {
+
+    const header = document.querySelector(".photograph-header");
+    const newDiv = document.createElement("div");
+    header.prepend(newDiv);
+
+    const photographerName = document.createElement("h2");
+    newDiv.appendChild(photographerName);
+    photographerName.id = "photographer_name";
+    photographerName.setAttribute("tabIndex", 0);
+    photographerName.setAttribute("aria-label", name);
+    photographerName.textContent = name;
+
+    const profilCard = document.createElement("div");
+    const profilBtn = document.createElement("div");
+    const profilPic = document.createElement("div");
+    profilCard.classList = "profil-card";
+    profilBtn.classList = "profil-btn";
+    profilPic.classList = "profil-img";
+    header.prepend(profilCard);
+    header.append(profilBtn);
+    header.append(profilPic);
+
+    const profilPicture = document.createElement("img");
+    profilPicture.id = "profil-picture";
+    profilPicture.setAttribute("src", picture);
+    profilPicture.setAttribute("alt", name);
+    profilPic.appendChild(profilPicture);
+
+    // const Btncontact = document.getElementById("contact");
+    // profilBtn.appendChild(Btncontact);
+
+    const profilName = document.createElement("h1");
+    profilName.textContent = name;
+    profilCard.appendChild(profilName);
+
+    const profilLocation = document.createElement("p");
+    profilLocation.textContent = city + ", " + country;
+    profilLocation.classList = "profil-location";
+    profilCard.appendChild(profilLocation);
+
+    const profilAbout = document.createElement("p");
+    profilAbout.textContent = tagline;
+    profilAbout.classList = "profil-tagline";
+    profilCard.appendChild(profilAbout);
+
+    const priceDay = document.querySelector(".price-day");
+    priceDay.textContent = price + "€ / jour";
+
+    // const contactName = document.getElementById("contact-name");
+    // contactName.textContent = name;
   }
-  return { id, getUserCardDOM };  
+
+  return { getUserCardDOM, getPhotographerProfilDOM };
 }
-//return { name, id, picture, city, country, tagline, price, getUserCardDOM };
+
+
+
+// return { name, id, picture, city, country, tagline, price, getUserCardDOM };

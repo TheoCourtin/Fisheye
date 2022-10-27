@@ -1,9 +1,11 @@
+/* Header page */
 #contact_modal {
     display: none;
     position: relative;
     justify-content: center;
 }
 
+/* profil du photographer */
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
@@ -11,6 +13,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 50px;
+}
+
+.photograph-header > * 
+{
+    width: 33%;
 }
 
 .contact_button {
@@ -18,13 +26,135 @@
     font-weight: bold;
     color: white;
     padding: 11px;
-    width: 170px;
+    width: 265px;
     height: 70px;
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
 }
+
+.profil-card {
+    display: flex;
+    flex-direction: column;
+}
+.profil-btn, 
+.profil-img {
+    display: flex;
+}
+.profil-btn {
+    justify-content: center;
+}
+.profil-img {
+    justify-content: end;
+}
+#profil-picture {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.photograph-header h1, 
+.profil-location {
+    margin: 0;
+}
+.photograph-header h1 {
+    font-size: 64px;
+    color: #D3573C;
+    font-weight: normal;
+}
+.profil-location {
+    font-size: 24px;
+    color: #901C1C;
+}
+.profil-tagline {
+    font-size: 18px;
+    color: #525252;
+}
+
+/* FILTRE DE RECHERCHE  */
+#filter {
+    margin: 25px 100px;
+}
+
+#filter select {
+    width: 150px;
+    height: 60px;
+    padding: 0 5px;
+    background-color: #901c1c;
+    color: #ffffff;
+    border-radius: 5px 5px 0 0;
+    border: none;
+    font-size: 18px;
+}
+
+/* GALLERIE */
+.gallery-picture, 
+.like {
+    cursor: pointer;
+}
+.photographer_gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    margin-top: 2%;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.photographer_gallery article {
+    width: 30%;
+    min-width: 370px;
+    height: 350px;
+    margin-bottom: 5%;
+}
+.gallery-picture {
+    width: 100%;
+    height: 90%;
+    border-radius: 5px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.media-content {
+    display: flex;
+    justify-content: space-between;
+    color: #901c1c;
+    font-size: 24px;
+    align-items: center;
+}
+.media-content .title {
+    margin: 0;
+    width: 75%;
+    font-size: 24px;
+    font-weight: 400;
+}
+#photographer_gallery .like {
+    display: flex;
+    margin: 0;
+}
+
+#photographer_gallery span {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+#photographer_gallery .number-like {
+    margin: 0;
+}
+
+/* #contact_modal {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 50%;
+    top: 50%;
+    margin-top: -50vh;
+    margin-left: -50vw;
+    overflow: auto;
+    background-color: rgba(196, 196, 196, 0.4);
+    z-index: 99;
+  } */
 
 .modal {
     border-radius: 5px;
@@ -80,17 +210,26 @@ form input {
     border-radius: 5px;
 }
 
-/* FILTRE DE RECHERCHE  */
-#filter {
-    margin: 25px 100px;
-}
-#filter select {
-    width: 150px;
+/* POPUP PRIX ET LIKE */
+#popup {
+    position: fixed;
+    bottom: 0;
+    right: 2%;
+    width: 376px;
     height: 60px;
-    padding: 0 5px;
-    background-color: #901c1c;
-    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #db8876;
     border-radius: 5px 5px 0 0;
-    border: none;
-    font-size: 18px;
+    font-size: 24px;
+    transition: 0.5s ease-in-out;
+}
+.popup-content {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+    color: #525252;
 }
