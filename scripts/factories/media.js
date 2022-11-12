@@ -61,7 +61,7 @@ function mediaFactory(data2) {
 
     const numberLike = document.createElement("span");
     numberLike.className = "number-like";
-    numberLike.setAttribute("data-id", id);
+    numberLike.setAttribute("data-id", id);    
     numberLike.textContent = likes;
 
     const iconLike = document.createElement("span");

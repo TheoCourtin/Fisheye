@@ -45,6 +45,8 @@ function photographerFactory(data) {
     const divPrice = document.createElement("div");
     divPrice.setAttribute("class", "price");
     divPrice.textContent = price + "€/jour";
+
+    
     
 
     //console.log(id,city,country,tagline,price);
@@ -111,11 +113,38 @@ function photographerFactory(data) {
     profilAbout.classList = "profil-tagline";
     profilCard.appendChild(profilAbout);
 
+    // const likes = document.querySelector(".profil-like");
+    // // likes.textContent = totalLike ;
+    // const heart = document.createElement("i");
+	  // heart.className = "fas fa-heart";
+	  // likes.appendChild(heart);
+
+
+    const likes = document.querySelector(".profil-like");
+    likes.setAttribute("data-id", id);
+
+    const totalLike = document.createElement("span");
+    totalLike.className = "total-like";
+    totalLike.style.paddingRight = "5px";
+
+    const heart = document.createElement("i");
+    heart.className = "fas fa-heart";
+
+    
+    likes.appendChild(totalLike);
+    likes.appendChild(heart);
+  
+
+
+
     const priceDay = document.querySelector(".price-day");
     priceDay.textContent = price + "€ / jour";
 
     // const contactName = document.getElementById("contact-name");
     // contactName.textContent = name;
+
+    
+
   }
 
   return { getUserCardDOM, getPhotographerProfilDOM };
