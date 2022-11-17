@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="ressources/fontawesome-free-6.1.1-web/css/all.css">
+    <!-- <link rel="stylesheet" href="ressources/fontawesome-free-6.1.1-web/css/all.css"> -->
+    <script src="https://kit.fontawesome.com/48b30f5d9d.js" crossorigin="anonymous"></script>
     
     <title>Fisheye - photographe </title>
   </head>
@@ -15,19 +16,54 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()" >Contactez-moi</button>
+        <button id="contact" class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
     </main>
+
+     <!-- NAVIGATION FILTRE DE TRI-->
+     <nav id="sort-nav">
+      <label class="sort-text" for="sort-select">Trier par </label>
+      <select id="sort-select">
+          <option value="popularite">Popularité</option>
+          <option value="date">Date</option>
+          <option value="title">Titre</option>
+      </select>
+  </nav>
 
     <!-- GALERIE -->
     <section class="photographer_gallery"></section>
 
+    <!-- LIGHTBOX -->
+    <!-- <div class="modalLightBox">
+      <span class="close cursor" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+
+        <div class="mySlides">
+          <img class="lightbox-image" src="" alt=""/>
+              <video controls autoplay  class="lightbox-video"> </video>
+              <p class="lightbox-title"></p>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+        <a class="next" onclick="plusSlides(1)">&#10095</a>
+      </div> -->
+
+      <div id="lightbox_id" class="lightbox">
+        <div class="lightbox-media">
+          <img src="" alt="" title="">
+          <video controls autoplay  alt="" title=""> </video>
+          <h3></h3>
+        </div>
+        <button class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+        <button><i class="fa-solid fa-chevron-left"></i></button>
+        <button><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+
+    
+
+    <!-- POPUP ET PRIX -->
     <section tabindex="1" id="popup">
-      <div class="popup_text">
-        <span class="likes_total"></span>
-        <span class="price_per_day"></span>
       <div class="popup-content">
-        <span class="likes-total"></span>
+        <p class="profil-like"></p>
         <span class="price-day"></span>
       </div>
     </section>
@@ -36,19 +72,34 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" alt="fermer le formulaire"/>
+          <img src="assets/icons/close.svg" id="close_modal" onclick="closeModal()" alt="fermer le formulaire"/>
         </header>
-				<form>
+				<form id="contactForm">
 					<div>
-						<label>Prénom</label>
-						<input />
+
+						<label for="firstName">Prénom</label>
+            <input type="text" name="firstName" id="firstName" aria-label="First-name">
+            <div class="msg_firstName"></div>
+
+            <label for="lastName">Nom</label>
+            <input type="text" name="lastName" id="lastName" aria-label="Last-name"/>
+            <div class="msg_lastName"></div>
+            
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" aria-label="E-mail"/>
+            <div class="msg_email"></div>
+
+            <label for="msg">Votre message</label>
+            <input form="contactForm" name="textArea" id="msg" aria-label="Your message"/>
+						
 					</div>
-          <button class="contact_button" aria-label="Envoyer le formulaire">Envoyer</button>
+          <button id="submit" type="submit" class="contact_button" aria-label="Envoyer le formulaire">Envoyer</button>
 				</form>
 			</div>
 		</div>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/utils/lightbox.js"></script>
     <script src="/scripts/factories/photographer.js"></script>
     <script src="/scripts/factories/media.js"></script>
 

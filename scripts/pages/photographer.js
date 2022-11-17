@@ -23,7 +23,7 @@ async function displayData(photographers) {
 
   photographers.forEach((photographer) => {
     const photographersData = photographerFactory(photographer);
-    console.log(photographersData);
+    //console.log(photographersData);
     //console.log(photographersData);
     photographersData.getPhotographerProfilDOM();
     //console.log(userProfilDOM);
@@ -36,7 +36,7 @@ async function displayMedia(medias) {
   
   medias.forEach((media) => {
     const mediasData = mediaFactory(media);
-    // console.log(mediaModel);
+     //console.log(mediasData);
     const mediaDOM = mediasData.getMediaCardDOM();
     //console.log(mediaDOM);
     //mediaSection.appendChild(mediaDOM);
@@ -121,6 +121,7 @@ async function displayMedia(medias) {
         .closest("article")
         .querySelector(".gallery-picture")
         .getAttribute("data-id");
+        console.log(mediaId);
       const mediaLikes = medias.find((el) => el.id === parseInt(mediaId, 10));
 
       if (mediaLikes.like === "liked") {
@@ -137,7 +138,9 @@ async function displayMedia(medias) {
     });
   });
 
+
   
+        
   
 }
 

@@ -10,6 +10,7 @@ function mediaFactory(data2) {
 
     article.setAttribute("data-id", id);
     article.className = "picture";
+    
 
     if (image) {
       //Ajout d'une image
@@ -24,6 +25,15 @@ function mediaFactory(data2) {
       picture.setAttribute("loading", "lazy");
       picture.setAttribute("data-id", id);
       picture.setAttribute("tabindex", "0");
+      picture.addEventListener("click", (e) => {
+        // const mediaId = e.target
+        // .closest("article")
+        // .querySelector(".gallery-picture")
+        // .getAttribute("data-id");
+        // // console.log(mediaId);
+      //  displayLightBox(e);
+      displayLightBoxMedia(imageLink,title,id);
+      })
 
       article.appendChild(picture);
     } else {
@@ -37,6 +47,13 @@ function mediaFactory(data2) {
       videos.setAttribute("title", title);
       videos.setAttribute("data-id", id);
       videos.setAttribute("tabindex", "0");
+      videos.addEventListener("click", (e) => {
+        // const mediaId = e.target
+        // .closest("article")
+        // .querySelector(".gallery-picture")
+        // .getAttribute("data-id");
+        // // console.log(mediaId);
+        displayLightBox(e);})
 
       article.appendChild(videos);
     }
