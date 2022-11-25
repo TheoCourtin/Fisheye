@@ -21,7 +21,7 @@ h1 {
 
 .logo {
     height: 50px;
-    margin-left: 100px;
+    margin: 0 50px;
 }
 
 .photographer_section {
@@ -42,6 +42,7 @@ h1 {
 
 .photographer_section article a {
     text-decoration: none;
+    height: 100%;
 }
 
 .photographer_section article a h2 {
@@ -59,14 +60,6 @@ h1 {
     box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
 }
 
- /* .photographer_section article a img {
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
-}  */
-
 .photographer_section article span {
     font-size: 18px;
     color: #901C1C;
@@ -78,5 +71,68 @@ h1 {
 }
 
 .photographer_section article .price {
-    color: #A0A0A0;
+    color: #312e2e;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px)
+{
+    .photographer_section
+    {
+        
+        gap: 35px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .img_header
+    {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* header
+    {
+        flex-direction: column;
+    } */
+
+    h1
+    {
+        margin-right: 20px;
+        margin-left: 20px;
+        /* width: 100%; */
+    }
+
+}
+
+@media screen and (max-width: 767px)
+{
+
+    body
+    {
+        margin: auto;
+    }
+    
+    
+    header
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+        margin-top: 10px;
+        /* flex-direction: unset; */
+    }
+
+    .photographer_section
+    {
+        grid-template-columns: 1fr;
+    }
+
+    h1
+    {
+        /* width: 100%; */
+        /* margin-left: 10px; */
+        margin-right: 0;
+    }
+}    

@@ -1,20 +1,18 @@
 function mediaFactory(data2) {
   const { id, photographerId, title, image, video, likes, date, price } = data2;
- 
-   const imageLink = `assets/Sample Photos/${photographerId}/${image}`;
-   const videoLink = `assets/Sample Photos/${photographerId}/${video}`;
-   
-  function getMediaCardDOM() 
-  {
+
+  const imageLink = `assets/Sample Photos/${photographerId}/${image}`;
+  const videoLink = `assets/Sample Photos/${photographerId}/${video}`;
+
+  function getMediaCardDOM() {
     const article = document.createElement("article");
 
     article.setAttribute("data-id", id);
     article.className = "picture";
-    
 
     if (image) {
       //Ajout d'une image
-      //const imageLink = `assets/photos/${photographerId}/${image}`;
+      
       const picture = document.createElement("img");
 
       picture.className = "gallery-picture";
@@ -26,19 +24,13 @@ function mediaFactory(data2) {
       picture.setAttribute("data-id", id);
       picture.setAttribute("tabindex", "0");
       picture.addEventListener("click", (e) => {
-        // const mediaId = e.target
-        // .closest("article")
-        // .querySelector(".gallery-picture")
-        // .getAttribute("data-id");
-        // // console.log(mediaId);
-      //  displayLightBox(e);
-      displayLightBoxMedia(imageLink,title,id);
-      })
+        displayLightBoxMedia(imageLink, title, id);
+      });
 
       article.appendChild(picture);
     } else {
       // Ajout d'une video
-      //const videoLink = `assets/photos/${photographerId}/${video}`;
+      
       const videos = document.createElement("video");
 
       videos.className = "gallery-picture";
@@ -48,12 +40,8 @@ function mediaFactory(data2) {
       videos.setAttribute("data-id", id);
       videos.setAttribute("tabindex", "0");
       videos.addEventListener("click", (e) => {
-        // const mediaId = e.target
-        // .closest("article")
-        // .querySelector(".gallery-picture")
-        // .getAttribute("data-id");
-        // // console.log(mediaId);
-        displayLightBox(e);})
+        displayLightBoxMedia(videoLink, title, id);
+      });
 
       article.appendChild(videos);
     }
@@ -78,7 +66,7 @@ function mediaFactory(data2) {
 
     const numberLike = document.createElement("span");
     numberLike.className = "number-like";
-    numberLike.setAttribute("data-id", id);    
+    numberLike.setAttribute("data-id", id);
     numberLike.textContent = likes;
 
     const iconLike = document.createElement("span");
@@ -95,6 +83,5 @@ function mediaFactory(data2) {
     return article;
   }
 
- return { getMediaCardDOM };
-
+  return { getMediaCardDOM };
 }

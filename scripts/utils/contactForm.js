@@ -22,46 +22,38 @@ const email = document.getElementById("email");
 const msg = document.getElementById("textArea");
 const regexMail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,63})$/;
 
-
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // console.log(firstName);
-    if (firstName.value.trim().length < 2) {
-        
-      document.querySelector(".msg_firstName").textContent =
-        "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
-      return false;
-    }
-    
-    else {
-        document.querySelector(".msg_firstName").textContent = "";
-    }
+  // console.log(firstName);
+  if (firstName.value.trim().length < 2) {
+    document.querySelector(".msg_firstName").textContent =
+      "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
+    return false;
+  } else {
+    document.querySelector(".msg_firstName").textContent = "";
+  }
 
-    // Vérifie si la valeur lastName est inférieur à 2
-    // console.log(lastName);
-    if (lastName.value.trim().length < 2) {
-      document.querySelector(".msg_lastName").textContent =
-        "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
-      return false;
-    }
-    
-    else {
-        document.querySelector(".msg_lastName").textContent = "";
-    }
+  // Vérifie si la valeur lastName est inférieur à 2
+  // console.log(lastName);
+  if (lastName.value.trim().length < 2) {
+    document.querySelector(".msg_lastName").textContent =
+      "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+    return false;
+  } else {
+    document.querySelector(".msg_lastName").textContent = "";
+  }
 
-    // Vérifie si la valeur eMail respecte le régex
-    if (!email.value.trim().match(regexMail)) {
-      document.querySelector(".msg_email").textContent =
-        "Entrez une adresse valide. Exemple : contact@gmail.com";
-      return false;
-    }
-    
-    else {
-        document.querySelector(".msg_email").textContent = "";
-    }
+  // Vérifie si la valeur eMail respecte le régex
+  if (!email.value.trim().match(regexMail)) {
+    document.querySelector(".msg_email").textContent =
+      "Entrez une adresse valide. Exemple : contact@gmail.com";
+    return false;
+  } else {
+    document.querySelector(".msg_email").textContent = "";
+  }
 
-    closeModal();
-    // lauchModalConfirm();
-    document.querySelector("#contactForm").reset();
-  });
+  closeModal();
+  // lauchModalConfirm();
+  document.querySelector("#contactForm").reset();
+});

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!-- <link rel="stylesheet" href="ressources/fontawesome-free-6.1.1-web/css/all.css"> -->
     <script src="https://kit.fontawesome.com/48b30f5d9d.js" crossorigin="anonymous"></script>
     
@@ -12,50 +13,46 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" alt="FishEye Homepage" aria-label="Logo FishEye"/>
+      <a class="img_header" href="index.html"><img src="assets/images/logo.png" class="logo" alt="FishEye Homepage" aria-label="Logo FishEye"/></a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button id="contact" class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button id="contact" class="contact_button" onclick="displayModal()" alt="" aria-label="Contact me">Contactez-moi</button>
       </div>
     </main>
 
      <!-- NAVIGATION FILTRE DE TRI-->
      <nav id="sort-nav">
-      <label class="sort-text" for="sort-select">Trier par </label>
-      <select id="sort-select">
-          <option value="popularite">Popularité</option>
-          <option value="date">Date</option>
-          <option value="title">Titre</option>
-      </select>
-  </nav>
+        <label class="sort-text" for="sort-select">Trier par </label>
+      
+        <select id="sort-select" class="sort-select">
+          
+          <option  value="popularite">Popularité</option>
+          <option  value="date">Date</option>
+          <option  value="title">Titre</option>
+       
+        </select>
+    
+      </nav>
+
+  
 
     <!-- GALERIE -->
-    <section class="photographer_gallery"></section>
+    <div class="container_gallery">
+      <section class="photographer_gallery"></section>
+    </div>
+    
 
     <!-- LIGHTBOX -->
-    <!-- <div class="modalLightBox">
-      <span class="close cursor" onclick="closeModal()">&times;</span>
-      <div class="modal-content">
-
-        <div class="mySlides">
-          <img class="lightbox-image" src="" alt=""/>
-              <video controls autoplay  class="lightbox-video"> </video>
-              <p class="lightbox-title"></p>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
-        <a class="next" onclick="plusSlides(1)">&#10095</a>
-      </div> -->
-
-      <div id="lightbox_id" class="lightbox">
+      <div id="lightbox_id" class="lightbox" aria-label="image closeup view" role="dialog" aria-hidden="true">
         <div class="lightbox-media">
           <img src="" alt="" title="">
           <video controls autoplay  alt="" title=""> </video>
           <h3></h3>
         </div>
-        <button class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
-        <button><i class="fa-solid fa-chevron-left"></i></button>
-        <button><i class="fa-solid fa-chevron-right"></i></button>
+        <button class="lightbox-close" role="button" aria-label="close dialog"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <button role="button" aria-label="next media"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <button role="button" aria-label="previous media"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
       </div>
 
     
@@ -68,11 +65,13 @@
       </div>
     </section>
 
+
+    <!-- CONTACT -->
     <div id="contact_modal">
-			<div class="modal">
+			<div class="modal" aria-label="Contact">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" id="close_modal" onclick="closeModal()" alt="fermer le formulaire"/>
+          <img tabindex="0" src="assets/icons/close.svg" id="close_modal" onclick="closeModal()" alt="Close contact form" aria-label="Close Contact Form"/>
         </header>
 				<form id="contactForm">
 					<div>
@@ -93,7 +92,7 @@
             <input form="contactForm" name="textArea" id="msg" aria-label="Your message"/>
 						
 					</div>
-          <button id="submit" type="submit" class="contact_button" aria-label="Envoyer le formulaire">Envoyer</button>
+          <button id="submit" type="submit" class="contact_button" aria-label="Send">Envoyer</button>
 				</form>
 			</div>
 		</div>

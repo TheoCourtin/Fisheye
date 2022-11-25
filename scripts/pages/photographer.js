@@ -33,10 +33,10 @@ async function displayData(photographers) {
 
 async function displayMedia(medias) {
   const mediaSection = document.querySelector(".photographer_gallery");
-  
+
   medias.forEach((media) => {
     const mediasData = mediaFactory(media);
-     //console.log(mediasData);
+    //console.log(mediasData);
     const mediaDOM = mediasData.getMediaCardDOM();
     //console.log(mediaDOM);
     //mediaSection.appendChild(mediaDOM);
@@ -44,12 +44,9 @@ async function displayMedia(medias) {
     //console.log(mediaSection.appendChild(mediaDOM));
 
     //mediaSection.appendChild(mediaFactory(media))
-
-
   });
   const tri = document.getElementById("sort-select");
   tri.addEventListener("change", function (e) {
-
     if (e.target.value === "popularite") {
       medias.sort(function (a, b) {
         if (a.likes < b.likes) {
@@ -93,24 +90,21 @@ async function displayMedia(medias) {
   });
 
   const likes = [];
-  for (const element in medias)
-  {
-    if (medias[element].photographerId ===+ getPhotographerId() ) 
-    {
+  for (const element in medias) {
+    if (medias[element].photographerId === +getPhotographerId()) {
       likes.push(medias[element]);
     }
   }
 
   let totalLike = 0;
-  likes.forEach((element) => 
-  {
+  likes.forEach((element) => {
     totalLike += parseInt(element.likes, 10);
   });
 
   document.querySelector(".total-like").textContent = totalLike;
   // console.log(totalLike);
 
-  const clicLikes = document.querySelectorAll('.like'); 
+  const clicLikes = document.querySelectorAll(".like");
 
   // Permet d'ajouter d'un like au coeur et d'augmenter de un le nombre
   clicLikes.forEach((element) => {
@@ -121,7 +115,7 @@ async function displayMedia(medias) {
         .closest("article")
         .querySelector(".gallery-picture")
         .getAttribute("data-id");
-        console.log(mediaId);
+      console.log(mediaId);
       const mediaLikes = medias.find((el) => el.id === parseInt(mediaId, 10));
 
       if (mediaLikes.like === "liked") {
@@ -137,13 +131,7 @@ async function displayMedia(medias) {
       }
     });
   });
-
-
-  
-        
-  
 }
-
 
 async function initPhotographers() {
   const { photographers } = await getPhotographers();
