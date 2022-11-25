@@ -1,0 +1,535 @@
+/* Header page */
+#contact_modal {
+    display: none;
+    position: relative;
+    justify-content: center;
+}
+
+/* profil du photographer */
+.photograph-header {
+    background-color: #FAFAFA;
+    height: 300px;
+    margin: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 34px;
+}
+
+.photograph-header>* {
+    width: 33%;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 264px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.profil-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profil-btn,
+.profil-img {
+    display: flex;
+}
+
+.profil-btn {
+    justify-content: center;
+}
+
+.profil-img {
+    justify-content: end;
+}
+
+#profil-picture {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.photograph-header h1,
+.profil-location {
+    margin: 0;
+}
+
+.photograph-header h1 {
+    font-size: 50px;
+    color: #D3573C;
+    font-weight: normal;
+}
+
+.profil-location {
+    font-size: 24px;
+    color: #901C1C;
+}
+
+.profil-tagline {
+    font-size: 21px;
+    color: #525252;
+}
+
+/* FILTRE DE RECHERCHE  */
+#sort-nav {
+    margin: 25px 50px;
+}
+
+#sort-select {
+    
+    width: 150px;
+    height: 60px;
+    padding: 0 5px;
+    background-color: #901c1c;
+    color: #ffffff;
+    border-radius: 5px 5px 0 0;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.sort-text {
+    font-size: 18px;
+    font-weight: bolder;
+    color: #000;
+    padding-right: 30px;
+
+}
+
+option {
+    display: flex;
+}
+
+.sort-text:focus {
+    color: yellow;
+
+}
+
+
+option:checked {
+    display: none;
+}
+
+
+/* GALLERIE */
+
+.container_gallery {
+    margin: 25px 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.like {
+    cursor: pointer;
+    align-items: center;
+}
+
+.photographer_gallery {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+
+
+.gallery-picture {
+    width: 100%;
+    height: 353px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+    margin-bottom: -5px;
+}
+
+.photographer_gallery .picture {
+    width: calc(100% / 4);
+}
+
+
+
+.media-content {
+    display: flex;
+    justify-content: space-between;
+    color: #901c1c;
+    font-size: 22px;
+    align-items: center;
+    width: 100%;
+}
+
+.media-content .title {
+    margin: 0;
+    width: 75%;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+#photographer_gallery .like {
+    display: flex;
+    margin: 0;
+}
+
+#photographer_gallery span {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+#photographer_gallery .number-like {
+    margin: 0;
+}
+
+.number-like {
+    margin-right: 10px;
+}
+
+#contact_modal {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 50%;
+    top: 50%;
+    margin-top: -50vh;
+    margin-left: -50vw;
+    overflow: auto;
+    background-color: rgba(196, 196, 196, 0.4);
+    z-index: 99;
+}
+
+.modal {
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+    font-size: 40px;
+}
+
+#msg {
+    height: 200px;
+}
+
+.msg_firstName {
+    color: white;
+    font-size: 15px;
+    background-color: #525252;
+    border-radius: 10px;
+    width: 101%;
+    display: flex;
+    align-items: center;
+}
+
+.msg_lastName {
+    color: white;
+    font-size: 15px;
+    background-color: #525252;
+    border-radius: 10px;
+    width: 101%;
+    display: flex;
+    align-items: center;
+
+}
+
+.msg_email {
+    color: white;
+    font-size: 15px;
+    background-color: #525252;
+    border-radius: 10px;
+    width: 101%;
+    display: flex;
+    align-items: center;
+}
+
+/* POPUP PRIX ET LIKE */
+#popup {
+    position: fixed;
+    bottom: 0;
+    right: 2%;
+    width: 376px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #db8876;
+    border-radius: 5px 5px 0 0;
+    font-size: 24px;
+    transition: 0.5s ease-in-out;
+}
+
+.popup-content {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+    font-weight: bold;
+}
+
+
+/* LIGHTBOX */
+.lightbox {
+    border-radius: 5px;
+    background-color: white;
+    color: #901c1c;
+    width: 95%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: none;
+    z-index: 1000;
+}
+
+.lightbox-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 95%;
+}
+
+.lightbox h3 {
+    margin: 0;
+    padding-top: 15px;
+    padding-left: 45px;
+    align-self: flex-start;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.lightbox button {
+    list-style: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.lightbox .fa-solid {
+    font-size: 50px;
+    color: #901c1c;
+    position: absolute;
+}
+
+.fa-xmark {
+    top: 30px;
+    right: 30px;
+}
+
+.fa-chevron-left {
+    left: 30px;
+    top: 50%;
+}
+
+.fa-chevron-right {
+    right: 30px;
+    top: 50%;
+}
+
+.lightbox img,
+.lightbox video {
+    object-fit: cover;
+    height: 100%;
+    width: 90%;
+    border-right: 10px solid #d2d2d2;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+/* TABLETTE */
+@media screen and (min-width: 768px) and (max-width: 1024px)
+{   
+    
+    .photographer_gallery .picture 
+    {
+        width: 45%;
+    }
+
+    #popup
+    {
+        height: 44px;
+    }
+
+    .profil-card
+    {
+        width: 100%;
+    }
+
+    #profil-picture
+    {
+        width: 170px;
+        height: 170px;
+    }
+
+    .contact_button
+    {
+        width: 367px;
+    }
+    
+    
+}
+
+/* TELEPHONE */
+@media screen and (max-width: 767px)
+{
+ 
+    
+    .profil-card
+    {
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+
+    .contact_button
+    {
+        margin-top: 0;
+        width: 220px;
+        
+    }
+
+    #profil-picture
+    {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profil-img
+    {
+        justify-content: center;
+        margin-top: 25px;
+    }
+
+    #popup
+    {
+        right: 0;
+        width: 60%;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .photograph-header h1 
+    {
+        display: flex;    
+    }
+  
+    .photographer_gallery 
+    {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .photographer_gallery .picture
+    {
+        width: 100%;
+    }
+
+    .photograph-header
+    {
+        display: flex;
+        flex-direction: column;
+        margin:0;
+        padding: 0;
+        margin-bottom: 100px;
+    }
+
+    .media-content
+    {
+        font-size: 20px;
+    }
+
+    #sort-nav
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    #sort-select
+    {
+        width: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sort-text
+    {
+        display: flex;
+        justify-content: center;
+    }
+}
+  
