@@ -19,6 +19,7 @@ function mediaFactory(data2) {
 
       picture.setAttribute("src", imageLink);
       picture.setAttribute("alt", title);
+      picture.setAttribute("title", "cliquer sur l'imgae pour ouvrir la galerie");
       picture.setAttribute("aria-label", `${title}, closeup view`);
       picture.setAttribute("loading", "lazy");
       picture.setAttribute("data-id", id);
@@ -26,6 +27,13 @@ function mediaFactory(data2) {
       picture.addEventListener("click", (e) => {
         displayLightBoxMedia(imageLink, title, id);
       });
+
+      picture.addEventListener("keydown", (e) => {
+        if (e.code === 13 || e.key === "Enter")  {
+          // console.log("Gauche");
+          displayLightBoxMedia(imageLink, title, id);
+        }}
+      );
 
       article.appendChild(picture);
     } else {
@@ -37,11 +45,21 @@ function mediaFactory(data2) {
 
       videos.setAttribute("src", videoLink);
       videos.setAttribute("title", title);
+      videos.setAttribute("aria-label", `${title}, closeup view`);
+      videos.setAttribute("title", "cliquer sur la vidéo pour ouvrir la galerie");
       videos.setAttribute("data-id", id);
       videos.setAttribute("tabindex", "0");
+      videos.setAttribute("aria-label", "appuyer sur f pour mettre en plein écran")
       videos.addEventListener("click", (e) => {
         displayLightBoxMedia(videoLink, title, id);
       });
+
+      videos.addEventListener("keydown", (e) => {
+        if (e.code === 13 || e.key === "Enter")  {
+          // console.log("Gauche");
+          displayLightBoxMedia(videoLink, title, id);
+        }}
+      );
 
       article.appendChild(videos);
     }
@@ -66,12 +84,13 @@ function mediaFactory(data2) {
 
     const numberLike = document.createElement("span");
     numberLike.className = "number-like";
+    numberLike.setAttribute("aria-label", "nombre de likes");
     numberLike.setAttribute("data-id", id);
     numberLike.textContent = likes;
 
     const iconLike = document.createElement("span");
     iconLike.className = "fa-solid fa-heart";
-    iconLike.setAttribute("aria-label", "likes");
+    iconLike.setAttribute("aria-label", "appuyer sur Entrée pour liker");
     iconLike.setAttribute("role", "button");
 
     article.appendChild(div);

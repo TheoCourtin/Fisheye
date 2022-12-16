@@ -20,6 +20,14 @@ function displayLightBoxMedia(src, title, id) {
     lightboxVideo.src = src;
     lightboxImg.style.display = "none";
     lightboxVideo.style.display = "block";
+    lightboxVideo.pause();
+    lightboxVideo.currentTime = 0;
+    lightboxVideo.volume = 0.1;
+    lightboxVideo.addEventListener("keydown", (e) => {
+      if (e.key === "f" || e.key === "F") {
+        lightboxVideo.requestFullscreen();
+      }
+    });
   }
   lightboxTitle.textContent = title;
   Lightbox.style.display = "block";

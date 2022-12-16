@@ -109,29 +109,49 @@ async function displayMedia(medias) {
   // Permet d'ajouter d'un like au coeur et d'augmenter de un le nombre
   clicLikes.forEach((element) => {
     element.addEventListener("click", (e) => {
-      const numberLikes = element.querySelector(".number-like");
-      const profilLikes = document.querySelector(".total-like");
-      const mediaId = e.target
-        .closest("article")
-        .querySelector(".gallery-picture")
-        .getAttribute("data-id");
-      console.log(mediaId);
-      const mediaLikes = medias.find((el) => el.id === parseInt(mediaId, 10));
+      manageLikes(element,e);
+    });
+  });  
 
-      if (mediaLikes.like === "liked") {
-        numberLikes.textContent = parseInt(numberLikes.textContent, 10) - 1;
-        mediaLikes.likes -= 1;
-        mediaLikes.like = "";
-        profilLikes.textContent = parseInt(profilLikes.textContent, 10) - 1;
-      } else {
-        numberLikes.textContent = parseInt(numberLikes.textContent, 10) + 1;
-        profilLikes.textContent = parseInt(profilLikes.textContent, 10) + 1;
-        mediaLikes.likes += 1;
-        mediaLikes.like = "liked";
+  // Permet d'ajouter d'un like au coeur et d'augmenter de un le nombre
+  clicLikes.forEach((element) => {
+    element.addEventListener("keydown", (e) => {
+      if (e.code === 13 || e.key === "Enter")  {
+        // console.log("Gauche");
+        manageLikes(element,e);
       }
+      
+      
     });
   });
+
+  function manageLikes(element,e)
+  {
+    const numberLikes = element.querySelector(".number-like");
+    const profilLikes = document.querySelector(".total-like");
+    const mediaId = e.target
+      .closest("article")
+      .querySelector(".gallery-picture")
+      .getAttribute("data-id");
+    console.log(mediaId);
+    const mediaLikes = medias.find((el) => el.id === parseInt(mediaId, 10));
+  
+    if (mediaLikes.like === "liked") {
+      numberLikes.textContent = parseInt(numberLikes.textContent, 10) - 1;
+      mediaLikes.likes -= 1;
+      mediaLikes.like = "";
+      profilLikes.textContent = parseInt(profilLikes.textContent, 10) - 1;
+    } else {
+      numberLikes.textContent = parseInt(numberLikes.textContent, 10) + 1;
+      profilLikes.textContent = parseInt(profilLikes.textContent, 10) + 1;
+      mediaLikes.likes += 1;
+      mediaLikes.like = "liked";
+    }
+  } 
+
 }
+
+
 
 async function initPhotographers() {
   const { photographers } = await getPhotographers();
@@ -163,12 +183,7 @@ async function initMedia() {
     }
     return 0;
   });
-  displayMedia(myMedia);
-  // likeTotal(myMedia);
-
-  // console.log(sortGallery(myMedia));
-  // sortGallery(medias);
-  //console.log(displayMedia(myMedia));
+  displayMedia(myMedia);  
 }
 
 initMedia();
